@@ -1,0 +1,957 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+h1 {
+    font-family: "Fredoka", sans-serif;
+}
+
+p {
+    font-family: "Nunito", sans-serif;
+}
+
+.form-login {
+    width: 60vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 0px 10%;
+    border-radius: 10px;
+}
+
+.img-2 {
+    width: 15vw;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.title-login {
+    padding: 50px 0px;
+}
+
+.title-login h1 {
+    font-size: 1.5em;
+    color: #231E61;
+}
+
+.title-login p {
+    font-size: 1em;
+    color: #231E61;
+}
+
+.input-login {
+    margin-bottom: 20px;
+}
+
+.input-login label {
+    font-family: "Fredoka", sans-serif;
+    display: flex;
+    justify-content: start;
+    color: #231E61;
+}
+
+.input-login input {
+    background-color: white !important;
+}
+
+.input-login ::placeholder {
+    font-family: "Nunito", sans-serif !important;
+}
+
+.ket-password {
+    font-family: "Nunito", sans-serif !important;
+    display: flex;
+    justify-content: start;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+.forgot-password {
+    font-size: 0.9em;
+    display: flex;
+    justify-content: end;
+    margin: 30px 0px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #231E61;
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    color: #AA36A5;
+
+}
+
+.button-login {
+    margin-top: 30px;
+    width: 200px;
+    font-family: "Fredoka", sans-serif !important;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 50px;
+    background-color: #231E61 !important;
+    border: none !important;
+    font-weight: 500 !important;
+}
+
+.button-login:hover {
+    background-color: #AA36A5 !important;
+
+}
+
+.button-login:active {
+    background-color: #AA36A5 !important;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.total-soal {
+    position: fixed;
+    top: 20px;
+    padding: 10px 16px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4);
+    color: white;
+    background-color: #231E61;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1051;
+    /* lebih tinggi dari offcanvas backdrop */
+    transition: all 0.3s ease;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+}
+
+.total-soal:hover {
+    background-color: #AA36A5;
+
+}
+
+.total-soal:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Posisi kiri saat offcanvas tertutup */
+.total-soal.kiri {
+    left: 20px;
+}
+
+/* Posisi kanan saat offcanvas terbuka */
+.total-soal.kanan {
+    top: 50px;
+    left: 340px;
+}
+
+.title-soal {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 50px;
+}
+
+.utama-no-sol {
+    display: flex;
+    justify-content: center;
+}
+
+.nomor-soal {
+    background-color: #AA36A5;
+    padding: 10px;
+    width: 50px !important;
+    color: white;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    margin: 10px 10px;
+}
+
+.nomor-soal:hover {
+    background-color: #750173;
+
+}
+
+.nomor-soal:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+}
+
+.utama-soal-test {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    max-width: calc(80vw - 250px);
+}
+
+.geser-kanan {
+    transform: translateX(250px) scale(0.95);
+}
+
+.soal,
+.jawaban {
+    display: flex;
+    gap: 10px;
+    text-align: left;
+    color: #231E61;
+}
+
+.soal {
+    font-weight: bold;
+}
+
+.jawaban {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.jawaban:hover {
+    color: #AA36A5;
+    font-weight: bold;
+}
+
+.no-jawaban {
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+    padding: 5px 10px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.jawaban:hover .no-jawaban {
+    background-color: #AA36A5;
+    color: white;
+}
+
+/* Saat dipilih */
+.jawaban.selected .no-jawaban {
+    box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.4);
+    background-color: #AA36A5;
+    color: white;
+}
+
+.jawaban.selected .teks-jawaban {
+    color: #AA36A5;
+    font-weight: bold;
+}
+
+.utama-button-soal {
+    display: flex;
+    justify-content: center;
+    gap: 400px;
+    margin-top: 100px;
+    z-index: 1000;
+}
+
+.button-soal {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    gap: 10px;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    color: white;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 1000;
+    text-align: center;
+    align-items: center;
+    color: #AA36A5;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+.button-soal:hover {
+    color: #750173;
+
+}
+
+.pesan-modal {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.utama-button-modal {
+    display: flex;
+    justify-content: space-between !important;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.true,
+.false {
+    margin-top: 30px;
+    width: 150px;
+    font-family: "Fredoka", sans-serif !important;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 50px;
+    border: none !important;
+    font-weight: 500 !important;
+}
+
+.true {
+    background-color: #3a32b3 !important;
+}
+
+.true:hover {
+    background-color: #6058c5 !important;
+}
+
+.false {
+    background-color: #a02828 !important;
+
+}
+
+.false:hover {
+    background-color: #d44b4b !important;
+
+}
+
+.hasil-quiz {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 50px;
+    border-radius: 30px;
+}
+
+.hasil-quiz h1 {
+    color: #231E61;
+}
+
+.detail-result {
+    display: flex;
+    gap: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.text-result {
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+.button-result {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    gap: 10px;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    color: white;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 1000;
+    text-align: center;
+    color: black;
+    font-size: 1.3em;
+    cursor: pointer;
+    position: absolute;
+    bottom: 50px;
+    left: 50px
+}
+
+.button-result:hover {
+    color: #231E61;
+}
+
+.timer {
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    font-family: "Fredoka", sans-serif !important;
+    font-weight: bold;
+    font-size: 2em;
+    color: #231E61;
+    border-radius: 10px;
+}
+
+.terjawab {
+    position: absolute;
+    top: 200px;
+    right: 30px;
+}
+
+.terjawab p {
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 5px;
+    font-weight: bold;
+    text-align: right;
+    color: #AA36A5;
+}
+
+/* Tablet (≤ 768px) */
+@media (max-width: 768px) {
+    .form-login {
+        width: 80vw;
+        margin-top: 80px;
+    }
+
+    .img-2 {
+        width: 180px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+
+    .title-login {
+        padding: 50px 0px;
+    }
+
+    .title-login h1 {
+        font-size: 2em;
+    }
+
+    .title-login p {
+        font-size: 1.3em;
+    }
+
+    .input-login {
+        margin-bottom: 30px;
+    }
+
+    .input-login label {
+        font-size: 1.2em;
+    }
+
+    .input-login input {
+        height: 50px !important;
+    }
+
+    .input-login ::placeholder {
+        font-size: 1em;
+    }
+
+    .ket-password {
+        font-size: 0.9em !important;
+    }
+
+    .forgot-password {
+        font-size: 1em;
+    }
+
+    .button-login {
+        margin-top: 30px;
+        width: 200px;
+        margin-bottom: 50px;
+        font-weight: 500 !important;
+        font-size: 1.2em !important;
+        padding: 20px 0px;
+    }
+
+    .total-soal {
+        position: absolute;
+        top: 30px;
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    /* Posisi kiri saat offcanvas tertutup */
+    .total-soal.kiri {
+        left: 30px !important;
+    }
+
+    /* Posisi kanan saat offcanvas terbuka */
+    .total-soal.kanan {
+        top: 30;
+        left: 300px;
+    }
+
+    .title-soal {
+        margin-bottom: 50px;
+        font-size: 1.5em !important;
+    }
+
+    .nomor-soal {
+        width: 50px !important;
+        margin: 20px 10px;
+        font-size: 1em;
+    }
+
+    .utama-soal-test {
+        transition: transform 0.3s ease;
+        max-width: calc(100vw - 350px);
+    }
+
+    .geser-kanan {
+        transform: translateX(200px) scale(0.75);
+    }
+
+    .soal {
+        font-size: 1.2em;
+    }
+
+    .jawaban {
+        font-size: 1em;
+    }
+
+    .no-jawaban {
+        padding: 3px 8px;
+    }
+
+    .utama-button-soal {
+        display: flex;
+        justify-content: center;
+        gap: 250px;
+        margin-top: 80px;
+        z-index: 1000;
+    }
+
+    .button-soal {
+        gap: 10px;
+        font-size: 1.3em;
+    }
+
+    .button-soal svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .pesan-modal {
+        font-size: 1.3em;
+        height: 100px;
+        margin-top: 30px;
+    }
+
+    .utama-button-modal {
+        margin-bottom: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .true,
+    .false {
+        width: 100px;
+        margin-bottom: 50px;
+        font-size: 1em !important;
+        padding: 5px 0px !important;
+    }
+
+    .timer {
+        position: absolute;
+        top: 100px;
+        right: 30px;
+        padding: 10px 20px;
+        font-size: 1.5em;
+    }
+
+    .terjawab {
+        position: absolute;
+        top: 170px;
+        right: 30px;
+    }
+
+    .terjawab p {
+        padding-bottom: 5px;
+        font-size: 0.9em;
+    }
+
+    .lg {
+        font-size: 1em !important;
+    }
+}
+
+/* Mobile kecil (≤ 480px) */
+@media (max-width: 480px) {
+    .form-login {
+        width: 80vw;
+        margin-top: 50px;
+    }
+
+    .img-2 {
+        width: 130px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+
+    .title-login {
+        padding: 50px 0px;
+    }
+
+    .title-login h1 {
+        font-size: 1.5em;
+    }
+
+    .title-login p {
+        font-size: 1em;
+    }
+
+    .input-login {
+        margin-bottom: 30px;
+    }
+
+    .input-login label {
+        font-family: "Fredoka", sans-serif;
+        display: flex;
+        justify-content: start;
+        color: #231E61;
+        font-size: 1em;
+    }
+
+    .input-login input {
+        height: 30px !important;
+    }
+
+    .input-login ::placeholder {
+        font-size: 0.8em !important;
+    }
+
+    .ket-password {
+        font-size: 0.6em !important;
+    }
+
+    .forgot-password {
+        font-size: 0.9em;
+    }
+
+    .button-login {
+        margin-top: 30px;
+        width: 150px;
+        margin-bottom: 50px;
+        background-color: #231E61 !important;
+        border: none !important;
+        font-weight: 500 !important;
+        font-size: 1em !important;
+        padding: 20px 0px;
+    }
+
+        .total-soal {
+        position: absolute;
+        top: 20px;
+        padding: 5px 15px;
+        font-size: 0.8em;
+    }
+
+    /* Posisi kiri saat offcanvas tertutup */
+    .total-soal.kiri {
+        left: 20px !important;
+    }
+
+    /* Posisi kanan saat offcanvas terbuka */
+    .total-soal.kanan {
+        top: 30;
+        left: 300px;
+    }
+
+    .title-soal {
+        margin-bottom: 50px;
+        font-size: 1.5em !important;
+    }
+
+    .nomor-soal {
+        width: 50px !important;
+        margin: 20px 10px;
+        font-size: 1em;
+    }
+
+    .utama-soal-test {
+        transition: transform 0.3s ease;
+        max-width: calc(100vw - 50px);
+    }
+
+    .geser-kanan {
+        transform: translateX(200px) scale(0.75);
+    }
+
+    .soal {
+        font-size: 0.9em;
+    }
+
+    .jawaban {
+        font-size: 0.8em;
+    }
+
+    .no-jawaban {
+        padding: 1px 5px;
+    }
+
+    .utama-button-soal {
+        display: flex;
+        justify-content: center;
+        gap: 200px;
+        margin-top: 50px;
+        z-index: 1000;
+    }
+
+    .button-soal {
+        gap: 5px;
+        font-size: 0.9em;
+    }
+
+    .button-soal svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .pesan-modal {
+        font-size: 1em;
+        height: 80px;
+        margin-top: 20px;
+    }
+
+    .utama-button-modal {
+        margin-bottom: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .true,
+    .false {
+        width: 100px;
+        margin-bottom: 30px;
+        font-size: 0.8em !important;
+        padding: 5px 0px !important;
+    }
+
+    .timer {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        padding: 5px 15px;
+        font-size: 1.3em;
+    }
+
+    .terjawab {
+        position: absolute;
+        top: 130px;
+        right: 20px;
+    }
+
+    .terjawab p {
+        padding-bottom: 5px;
+        font-size: 0.7em;
+    }
+
+    .lg {
+        font-size: 0.9em !important;
+    }
+
+    .hasil-quiz h1 {
+        font-size: 1.5em;
+    }
+
+    .detail-result {
+        display: flex;
+        gap: 50px;
+    }
+
+    .text-result {
+        font-size: 1em;
+    }
+
+    .button-result {
+        gap: 10px;
+        font-size: 1em;
+        bottom: 50px;
+        left: 50px
+    }
+
+    .button-result svg {
+        width: 25px;
+    }
+}
+
+/* Desktop (≥ 1200px) */
+@media (min-width: 1441px) {
+    .form-login {
+        width: 80vw;
+        margin-top: 50px;
+    }
+
+    .img-2 {
+        width: 250px;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+    }
+
+    .title-login {
+        padding: 80px 0px;
+    }
+
+    .title-login h1 {
+        font-size: 2.5em;
+    }
+
+    .title-login p {
+        font-size: 1.5em;
+    }
+
+    .input-login {
+        margin-bottom: 40px;
+    }
+
+    .input-login label {
+        font-family: "Fredoka", sans-serif;
+        display: flex;
+        justify-content: start;
+        color: #231E61;
+        font-size: 1.5em;
+    }
+
+    .input-login input {
+        height: 80px !important;
+    }
+
+    .input-login ::placeholder {
+        font-size: 1.5em;
+    }
+
+    .ket-password {
+        font-size: 1.2em !important;
+    }
+
+    .forgot-password {
+        font-size: 1.5em;
+    }
+
+    .button-login {
+        margin-top: 40px;
+        width: 300px;
+        margin-bottom: 80px;
+        background-color: #231E61 !important;
+        border: none !important;
+        font-weight: 500 !important;
+        font-size: 1.6em !important;
+        padding: 20px 0px;
+    }
+
+    .total-soal {
+        position: absolute;
+        top: 50px;
+        padding: 20px 30px;
+        font-size: 1.5em;
+    }
+
+    /* Posisi kiri saat offcanvas tertutup */
+    .total-soal.kiri {
+        left: 50px !important;
+    }
+
+    /* Posisi kanan saat offcanvas terbuka */
+    .total-soal.kanan {
+        top: 50;
+        left: 300px;
+    }
+
+    .title-soal {
+        margin-bottom: 80px;
+        font-size: 2.5em !important;
+    }
+
+    .nomor-soal {
+        width: 80px !important;
+        margin: 30px 10px;
+        font-size: 1.8em;
+    }
+
+    .utama-soal-test {
+        transition: transform 0.3s ease;
+        max-width: calc(100vw - 400px);
+    }
+
+    .geser-kanan {
+        transform: translateX(250px) scale(0.80);
+    }
+
+    .soal {
+        font-size: 2em;
+    }
+
+    .jawaban {
+        font-size: 1.8em;
+    }
+
+    .no-jawaban {
+        padding: 5px 15px;
+    }
+
+    .utama-button-soal {
+        display: flex;
+        justify-content: center;
+        gap: 500px;
+        margin-top: 150px;
+        z-index: 1000;
+    }
+
+    .button-soal {
+        gap: 20px;
+        font-size: 1.8em;
+    }
+
+    .button-soal svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .pesan-modal {
+        font-size: 2.3em;
+        height: 200px;
+        margin-top: 80px;
+    }
+
+    .utama-button-modal {
+        margin-bottom: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .true,
+    .false {
+        width: 200px;
+        margin-bottom: 50px;
+        font-size: 1.6em !important;
+        padding: 10px 0px !important;
+    }
+
+    .timer {
+        position: absolute;
+        top: 150px;
+        right: 50px;
+        padding: 20px 40px;
+        font-size: 2.5em;
+    }
+
+    .terjawab {
+        position: absolute;
+        top: 280px;
+        right: 50px;
+    }
+
+    .terjawab p {
+        padding-bottom: 5px;
+        font-size: 1.6em;
+    }
+
+    .lg {
+        font-size: 1.8em !important;
+    }
+
+    .hasil-quiz h1 {
+        font-size: 4em;
+        margin-top: 80px;
+    }
+
+    .detail-result {
+        display: flex;
+        gap: 200px;
+    }
+
+    .text-result {
+        font-size: 2.5em;
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
+
+    .button-result {
+        gap: 20px;
+        font-size: 2em;
+        bottom: 80px;
+        left: 80px;
+        width: fit-content;
+    }
+
+    .button-result svg {
+        height: 30px;
+        width: auto;
+    }
+}
