@@ -141,7 +141,7 @@ function Quiz() {
     });
   };
 
-  const [timeLeft, setTimeLeft] = useState(5); // 300 detik = 5
+  const [timeLeft, setTimeLeft] = useState(600); // 300 detik = 5
 
   const questionsRef = useRef([]);
   const selectedAnswersRef = useRef([]);
@@ -230,7 +230,9 @@ function Quiz() {
 
       <div className="terjawab">
         <p>Soal terjawab</p>
-        <p className="lg" style={{ color: "#231E61", fontSize: "1.3em", fontWeight: "900" }}>
+        <p
+          className="lg"
+          style={{ color: "#231E61", fontSize: "1.3em", fontWeight: "900" }}>
           {answeredQuestions.length} / {questions.length}
         </p>
       </div>
@@ -242,8 +244,7 @@ function Quiz() {
 
       {/* Offcanvas */}
       <Offcanvas show={show} onHide={handleClose} placement="start">
-        <Offcanvas.Header>
-        </Offcanvas.Header>
+        <Offcanvas.Header></Offcanvas.Header>
         <Offcanvas.Body>
           <div className="title-soal">Soal</div>
           <Row className="utama-no-sol">
